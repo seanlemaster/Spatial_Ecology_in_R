@@ -10,3 +10,13 @@ This course mainly focuses on the application of free and open source algorithms
 [Duccio Rocchini](https://www.unibo.it/sitoweb/duccio.rocchini/didattica)
 
 ## Program
++ 1. R (intro)
++ 2. Spatial R
++ 3. Population Ecology | Point Patterns Analysis
++ 4. Multivariate analysis in R
++ 5. Remote sensing in R
++ 6. Multitemporal analysis of ecosystem functions
++ 7. Species Distribution Modelling
+ 
+<img width="1000" height="700" alt="buzzfeed-listicle-scatterplot" src="https://github.com/user-attachments/assets/8787d13d-b3e1-47aa-9920-c09124577c0d" />
+
