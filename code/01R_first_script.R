@@ -18,3 +18,17 @@ samuele ^ gemma
 tia <- 5 * 4
 
 tia + samuele + gemma
+
+matteo <- c(5, 10, 20, 50, 80)  ## An array is a set of elements: this is the array of mammal species 
+
+# c= function
+# everything separated by a comma is called arguments. 
+
+elisa <- c(100, 80, 50, 20, 10) ## an array of human deaths dues to disease
+
+plot(matteo, elisa)
+
+## look up "point character in R" for list of symbol templates to use
+
+## chainging the point character
+plot(matteo, elisa, pch=8)
