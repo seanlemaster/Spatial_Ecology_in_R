@@ -32,3 +32,21 @@ plot(matteo, elisa)
 
 ## chainging the point character
 plot(matteo, elisa, pch=8)
+
+$$ character exaggeration
+plot(matteo, elisa, pch=19, cex=2)
+
+## changing the color
+plot(matteo, elisa, pch=19, cex=2, col="blue")
+
+## changing the labels
+plot(matteo, elisa, pch=19, cex=2, col="chartreuse3", xlab="number of mammals", ylab="number of human deaths")
+
+## changing the labels
+plot(matteo, elisa, pch=19, cex=2, col="chartreuse3", xlab="number of mammals", ylab="number of human deaths")
+
+## changing size of axis labels.
+plot(matteo, elisa, pch=19, cex=2, col="chartreuse3", xlab="number of mammals", ylab="number of human deaths", ccex.lab=2)
+
+
+
