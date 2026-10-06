@@ -13,4 +13,4 @@ In order to import images in Markdown there are two different methods:
 
 add file -> upload image. 
 
-< img src="Pics/dji_fly_20241226_054143_0_1735188103432_photo_low_quality.JPG">
+<img src="Pics/dji_fly_20241226_054143_0_1735188103432_photo_low_quality.JPG">
