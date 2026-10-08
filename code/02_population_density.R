@@ -1,7 +1,7 @@
 # R code for population density.
 
 ## Installing packages
-install.packages("spatstat")
+#install.packages("spatstat")
 
 # using the package(s)
 library(spatstat)
@@ -68,4 +68,29 @@ plot(densitymap)
 # If you get any graphical issue here is your friend
 dev.off()
 
+# change colors in our maps
+cl <- colorRampPalette(c("blue", "green", "red"))
 
+plot(elevation, col=cl)
+
+# change colors in our maps
+cl <- colorRampPalette(c("magenta1", "green", "mediumpurple")
+
+# change colors in our maps, but controlling the nuance levels. 
+cl3 <- colorRampPalette(c("magenta1", "green", "mediumpurple"))(3))
+
+# change colors in our maps, but controlling the nuance levels. 
+cl10 <- colorRampPalette(c("magenta1", "green", "mediumpurple"))(10)
+
+## Exercise: make a multiiframe with the map with 10 nuances ontop of that with 100
+
+cl10 <- colorRampPalette(c("magenta1", "green", "mediumpurple"))(10)
+cl100 <- colorRampPalette(c("magenta1", "green", "mediumpurple"))(100)
+
+par(mfrow=c(2,1))
+plot(elevation, col=cl10)
+plot(elevation, col=cl100)
+
+
+
+                       
