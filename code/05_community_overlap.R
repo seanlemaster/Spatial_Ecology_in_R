@@ -33,7 +33,7 @@ tigertime <- tiger$Timecirc
 densityPlot(tigertime)
 
 # Alternative Method 2: selecting a column will not necessarily require the name 
-tigertime <- tiger[4]
+#tigertime <- tiger[4]
 
 # Exercise: select all the rows of the kerinci dataset with the species macaque
 macaque <- kerinci[kerinci$Sps=="macaque",]
