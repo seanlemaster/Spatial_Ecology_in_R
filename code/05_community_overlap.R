@@ -31,3 +31,37 @@ densityPlot(tiger$Timecirc)
 # Alternative method: create the time variable from the tiger datasite and use it in the calculation 
 tigertime <- tiger$Timecirc
 densityPlot(tigertime)
+
+# Alternative Method 2: selecting a column will not necessarily require the name 
+tigertime <- tiger[4]
+
+# Exercise: select all the rows of the kerinci dataset with the species macaque
+macaque <- kerinci[kerinci$Sps=="macaque",]
+
+# Exercise: how to be sure that only macaque are present
+summary(macaque)
+
+# Exercise: make the density plot 
+macaquetime <- macaque$Timecirc
+densityPlot(macaquetime)
+
+# Overlap the two distributions 
+overlapPlot(tigertime, macaquetime, linetype=c(3,1))
+
+# Changing the line colors
+overlapPlot(tigertime, 
+            macaquetime, 
+            linetype=c(3,1),
+            linecol=c("red","blue")
+            )
+
+
+# Changing the overlap colors
+overlapPlot(tigertime, 
+            macaquetime, 
+            linetype=c(3,1),
+            linecol=c("red","blue"),
+            olapcol="deeppink"
+            )
+
+
