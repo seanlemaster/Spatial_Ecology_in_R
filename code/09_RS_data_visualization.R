@@ -72,3 +72,36 @@ sentinel <- im.import("sentinel.dolomites")
 #original b4= layer 3 in the stack
 #original b8= layer 4 in the stack
 plot(sentinel[[4]])
+
+# RGB
+# Layer 1 = b2= blue band
+# Layer 2 = b3 = green band
+# Layer 3 = b4 = red band 
+# Layer 4 = b8 = NIR
+
+# natural color image
+im.plotRGB(sentinel, r=3, g=2, b=1, title="Natural colors image")
+
+# false colors image 
+im.plotRGB(sentinel, r=4, g=3, b=2, title="False colors image")
+
+# making a multigrame with the two RGB images 
+im.multiframe(1,2)
+im.plotRGB(sentinel, r=3, g=2, b=1, title="Natural colors image")
+im.plotRGB(sentinel, r=4, g=3, b=2, title="False colors image")
+
+# Exercise: put the NIR ontop of the green component of the RGB scheme
+im.plotRGB(sentinel, r=3, g=4, b=2, title="False colors image") # all that matters is putting the NIR on the right one. 
+
+# Exercise: put the NIR ontop of the blue 
+im.plotRGB(sentinel, r=3, g=1, b=4, title="False colors image") # 
+
+# Making a multi-frame with the four RGB plots 
+im.multiframe(2,2)
+im.plotRGB(sentinel, r=3, g=2, b=1, title="Natural colors image")
+im.plotRGB(sentinel, r=4, g=3, b=2, title="False colors image")
+im.plotRGB(sentinel, r=3, g=4, b=2, title="False colors image")
+im.plotRGB(sentinel, r=3, g=1, b=4, title="False colors image") # 
+
+
+
