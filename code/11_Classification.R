@@ -93,3 +93,60 @@ ggplot(tabout, aes(x=class, y=perc1992, color=class)) +
 ggplot(tabout, aes(x=class, y=perc2006, color=class)) +
   geom_bar(stat="identity", fill="white")
 
+# Changing the geometry
+ggplot(tabout, aes(x=class, y=perc1992, color=class)) +
+  geom_point()
+
+# Using the patchwork package to plot several plots together 
+p1 <- ggplot(tabout, aes(x=class, y=perc1992, color=class)) +
+  geom_bar(stat="identity", fill="white")
+
+p2 <- ggplot(tabout, aes(x=class, y=perc2006, color=class)) +
+  geom_bar(stat="identity", fill="white")
+
+p1 + p2
+
+# Exercise: wtith patchwork, put one plot ontop of the other
+p1 / p2
+
+# IMPORTANT: matching the scales 
+p1 <- ggplot(tabout, aes(x=class, y=perc1992, color=class)) +
+  geom_bar(stat="identity", fill="white") +
+  ylim(c(0,100))
+
+p2 <- ggplot(tabout, aes(x=class, y=perc2006, color=class)) +
+  geom_bar(stat="identity", fill="white") +
+  ylim(c(0,100))
+
+p1 + p2
+
+
+# Remvoing one legend
+p1 <- ggplot(tabout, aes(x=class, y=perc1992, color=class)) +
+  geom_bar(stat="identity", fill="white") +
+  ylim(c(0,100)) +
+  theme(legend.position = "none")
+
+p2 <- ggplot(tabout, aes(x=class, y=perc2006, color=class)) +
+  geom_bar(stat="identity", fill="white") +
+  ylim(c(0,100))
+
+p1 + p2
+
+
+# Using patchwork with satellite data
+s1 <- im.ggplot(m1992[[1]])
+s2 <- im.ggplot(m2006[[1]])
+
+# plotting satellite data and stats together 
+( s1 | s2) /
+(p1 | p2)
+
+# doing the same with RGB images
+RGB1 <- im.ggplotRGB(m1992)
+RGB2 <- im.ggplotRGB(m2006)
+
+#Final plot
+( RGB1 | RGB2) /
+(p1 | p2)
+
