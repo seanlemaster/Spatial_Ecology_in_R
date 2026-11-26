@@ -63,3 +63,34 @@ sdNIR <- focal(sent[[1]], w=3, fun="sd")
 
 stacksd <- c(sent[[1]], sdNIR)
 plot(stacksd, col=cividis(100))
+
+# Exercise: calculate standard deviation for 7x7, 13x13, stack of all the data, rename inner layers of stack
+sdNIR7 <- focal(sent[[1]], w=7, fun="sd")
+sdNIR13 <- focal(sent[[1]], w=13, fun="sd")
+
+stacksd <- c(sent[[1]], sdNIR, sdNIR7, sdNIR13)
+names(stacksd) <- c("original", "mean_3", "mean_7", "mean_13")
+plot(stacksd, col=cividis(100))
+
+# Measuring thr variability of the whole original image
+sentsd <- focal(sent, w=7, fun="sd")
+
+# The output image has three layers:
+# hypothesis: terra is calculatin gthe sd on every single layer 
+# Trest: plotting the NIR sd vs. the sd of the first layer of sent 
+
+teststack <- c(sdNIR7, sentsd[[1]])
+plot(teststack)
+
+# Scatterplot
+plot(sdNIR7, sendsd[[1]])
+# linear, so yes, hypo is true 
+
+# The correlation must be done among vectors 
+x<- values(sdNIR7)
+y<- values(sendsd[[1]])
+cor(x,y, use="complete.obs")
+
+
+
+
